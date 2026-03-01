@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/ctrlcoded/Aryan-portfolio/main/public/sequence/frame_000_delay-0.03s.webp" alt="Portfolio Preview" width="100%" />
+  <img src="./public/preview.png" alt="Portfolio Preview" width="100%" />
 
   <h1>Aryan Raghav - Professional Portfolio</h1>
   
