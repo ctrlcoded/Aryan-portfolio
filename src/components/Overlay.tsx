@@ -67,22 +67,7 @@ export default function Overlay() {
                         I help startups and businesses build production-ready applications using React, Node.js, MongoDB, and Docker with strong backend architecture and authentication systems.
                     </motion.p>
 
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 1, delay: 0.8 }}
-                        className="flex flex-wrap items-center justify-center gap-4 mt-10"
-                    >
-                        <button className="px-8 py-3.5 rounded-full bg-white text-black font-semibold hover:bg-zinc-200 transition-colors shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:scale-105 active:scale-95 duration-200">
-                            Hire Me
-                        </button>
-                        <button className="px-8 py-3.5 rounded-full bg-white/5 text-white font-medium hover:bg-white/10 backdrop-blur-md border border-white/10 transition-colors hover:scale-105 active:scale-95 duration-200">
-                            View Work
-                        </button>
-                        <button className="px-8 py-3.5 rounded-full bg-transparent text-zinc-300 font-medium hover:text-white underline underline-offset-4 transition-colors">
-                            Download Resume
-                        </button>
-                    </motion.div>
+
                 </motion.div>
 
                 {/* Section 2 */}

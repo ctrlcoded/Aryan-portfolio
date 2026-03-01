@@ -33,7 +33,7 @@ export default function Projects() {
     ];
 
     return (
-        <section className="min-h-screen bg-[#0a0a0a] py-32 px-4 md:px-24 border-t border-white/5 relative z-20">
+        <section id="work-section" className="min-h-screen bg-[#0a0a0a] py-32 px-4 md:px-24 border-t border-white/5 relative z-20">
             <div className="max-w-7xl mx-auto">
                 <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
                     <div>

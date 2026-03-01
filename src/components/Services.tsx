@@ -11,7 +11,7 @@ export default function Services() {
     ];
 
     return (
-        <section className="bg-[#0a0a0a] py-32 px-4 md:px-24 border-t border-white/5 relative z-20">
+        <section id="services-section" className="bg-[#0a0a0a] py-32 px-4 md:px-24 border-t border-white/5 relative z-20">
             <div className="max-w-7xl mx-auto">
                 <div className="mb-20 max-w-2xl">
                     <h2 className="text-5xl md:text-7xl font-bold tracking-tighter text-white leading-[1.1]">

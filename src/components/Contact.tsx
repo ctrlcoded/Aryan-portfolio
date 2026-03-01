@@ -4,7 +4,7 @@ import { Mail, Linkedin, Github as GithubIcon, MessageCircle } from "lucide-reac
 
 export default function Contact() {
     return (
-        <section className="bg-[#0a0a0a] py-32 px-4 md:px-24 border-t border-white/5 relative z-20 pb-48">
+        <section id="contact-section" className="bg-[#0a0a0a] py-32 px-4 md:px-24 border-t border-white/5 relative z-20 pb-48">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-16">
                 <div className="md:w-1/2">
                     <h2 className="text-5xl md:text-7xl font-bold tracking-tighter text-white leading-[1.1]">Let's Talk.</h2>

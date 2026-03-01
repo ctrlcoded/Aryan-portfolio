@@ -5,10 +5,13 @@ import Services from "@/components/Services";
 import WhyMe from "@/components/WhyMe";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 
 export default function Home() {
   return (
     <main className="bg-[#0a0a0a] min-h-screen w-full relative selection:bg-emerald-500/30">
+      <Navbar />
+
       <div className="relative">
         {/* The 500vh container handling the scroll scrub sequence */}
         <ScrollyCanvas />
