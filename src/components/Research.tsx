@@ -44,7 +44,7 @@ export default function Research() {
                             Indic Language Modeling
                         </h2>
                     </div>
-                    <p className="text-lg md:text-xl text-white/55 font-normal tracking-tight leading-relaxed">
+                    <p className="text-lg md:text-xl text-white/65 font-normal tracking-tight leading-relaxed">
                         Preserving cultural meaning in translation — a multi-stage system that
                         extracts, retrieves, and aggregates cultural features from Hindi idioms.
                     </p>
@@ -57,13 +57,13 @@ export default function Research() {
                                 <div className="h-12 w-12 rounded-2xl bg-white/8 border border-white/10 flex items-center justify-center mb-6">
                                     {s.icon}
                                 </div>
-                                <p className="text-[12px] font-semibold tracking-[0.16em] uppercase text-white/40 mb-3">
+                                <p className="text-[12px] font-semibold tracking-[0.16em] uppercase text-white/55 mb-3">
                                     {s.step}
                                 </p>
                                 <h3 className="text-xl font-semibold text-white tracking-tight mb-3">
                                     {s.title}
                                 </h3>
-                                <p className="text-[15px] text-white/55 font-normal leading-relaxed">
+                                <p className="text-[15px] text-white/65 font-normal leading-relaxed">
                                     {s.desc}
                                 </p>
                             </div>
@@ -72,7 +72,7 @@ export default function Research() {
                 </div>
 
                 <Reveal delay={120} className="mt-8 flex flex-wrap gap-2">
-                    {["Groq API", "LaBSE", "Cosine Similarity", "Scikit-learn", "Ensemble Models", "500+ Idioms"].map(
+                    {["Groq API", "Llama 3.3/4", "Kimi K2", "LaBSE", "Cosine Similarity", "Scikit-learn", "RAG", "500+ Idioms"].map(
                         (t) => (
                             <span
                                 key={t}

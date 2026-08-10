@@ -5,9 +5,11 @@ import Research from "@/components/Research";
 import Experience from "@/components/Experience";
 import Services from "@/components/Services";
 import WhyMe from "@/components/WhyMe";
+import Skills from "@/components/Skills";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import BackToTop from "@/components/BackToTop";
 
 export default function Home() {
   return (
@@ -36,11 +38,17 @@ export default function Home() {
       {/* Capabilities */}
       <Services />
 
+      {/* Toolkit marquee */}
+      <Skills />
+
       {/* Contact */}
       <Contact />
 
       {/* Footer */}
       <Footer />
+
+      {/* Floating back-to-top */}
+      <BackToTop />
     </main>
   );
 }

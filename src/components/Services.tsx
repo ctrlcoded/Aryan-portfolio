@@ -60,7 +60,7 @@ export default function Services() {
                                 <h3 className="text-xl font-semibold text-white tracking-tight mb-3">
                                     {s.title}
                                 </h3>
-                                <p className="text-[15px] text-white/55 font-normal leading-relaxed grow">
+                                <p className="text-[15px] text-white/65 font-normal leading-relaxed grow">
                                     {s.desc}
                                 </p>
                             </div>

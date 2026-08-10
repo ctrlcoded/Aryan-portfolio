@@ -70,10 +70,36 @@ export default function Overlay() {
                     </motion.p>
 
                     <motion.div
-                        initial={{ opacity: 0, y: 10 }}
+                        initial={{ opacity: 0, y: 12 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 1, delay: 0.7 }}
-                        className="mt-10 flex items-center gap-2 text-white/40 text-sm font-medium"
+                        transition={{ duration: 1, delay: 0.65 }}
+                        className="mt-10 flex flex-wrap items-center justify-center gap-3 pointer-events-auto"
+                    >
+                        <button
+                            onClick={() =>
+                                document
+                                    .getElementById("work-section")
+                                    ?.scrollIntoView({ behavior: "smooth" })
+                            }
+                            className="rounded-full bg-[#2997ff] hover:bg-[#0a84ff] text-white text-[15px] font-medium px-7 h-12 flex items-center transition-colors"
+                        >
+                            View Work
+                        </button>
+                        <a
+                            href="/Aryan-Raghav-Resume.pdf"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="rounded-full glass hover:bg-white/10 text-white text-[15px] font-medium px-7 h-12 flex items-center transition-colors"
+                        >
+                            Résumé
+                        </a>
+                    </motion.div>
+
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 1, delay: 0.9 }}
+                        className="mt-9 flex items-center gap-2 text-white/45 text-sm font-medium"
                     >
                         <span>Scroll to explore</span>
                         <span className="inline-block animate-bounce">↓</span>
