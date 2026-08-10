@@ -1,6 +1,8 @@
 import ScrollyCanvas from "@/components/ScrollyCanvas";
 import Overlay from "@/components/Overlay";
 import Projects from "@/components/Projects";
+import Research from "@/components/Research";
+import Experience from "@/components/Experience";
 import Services from "@/components/Services";
 import WhyMe from "@/components/WhyMe";
 import Contact from "@/components/Contact";
@@ -9,26 +11,32 @@ import Navbar from "@/components/Navbar";
 
 export default function Home() {
   return (
-    <main className="bg-[#0a0a0a] min-h-screen w-full relative selection:bg-emerald-500/30">
+    <main className="bg-black min-h-screen w-full relative selection:bg-[#2997ff]/30">
       <Navbar />
 
       <div className="relative">
-        {/* The 500vh container handling the scroll scrub sequence */}
+        {/* 500vh scroll-scrub photo sequence (kept as-is) */}
         <ScrollyCanvas />
-        {/* The sticky overlay that syncs with the scroll */}
+        {/* Sticky overlay synced with the scroll */}
         <Overlay />
       </div>
 
-      {/* The grid section appearing after the scroll ends */}
+      {/* Selected work — four featured products */}
       <Projects />
 
-      {/* What I can help you build */}
-      <Services />
+      {/* Research — Indic language modeling */}
+      <Research />
 
-      {/* Why Work With Me */}
+      {/* Experience — DataAnnotation */}
+      <Experience />
+
+      {/* About / stats */}
       <WhyMe />
 
-      {/* Contact Form */}
+      {/* Capabilities */}
+      <Services />
+
+      {/* Contact */}
       <Contact />
 
       {/* Footer */}

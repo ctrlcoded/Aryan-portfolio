@@ -1,115 +1,177 @@
-import { ExternalLink, Github, ArrowRight } from "lucide-react";
+import { ExternalLink, Github, Car, Sparkles, GraduationCap, Target } from "lucide-react";
+import Reveal from "./Reveal";
+
+type Project = {
+    title: string;
+    category: string;
+    desc: string;
+    icon: React.ReactNode;
+    gradient: string;
+    glow: string;
+    tech: string[];
+    liveUrl?: string;
+    githubUrl: string;
+    details: string[];
+};
+
+const projects: Project[] = [
+    {
+        title: "GoNomad",
+        category: "Full-Stack · MERN",
+        desc: "A production car-rental marketplace connecting owners and travelers across North India.",
+        icon: <Car size={40} strokeWidth={1.5} className="text-white" />,
+        gradient: "from-emerald-500/25 via-teal-500/10 to-transparent",
+        glow: "bg-emerald-500/20",
+        tech: ["React 19", "Express 5", "MongoDB", "Gemini API", "ImageKit", "JWT"],
+        liveUrl: "https://go-nomad.netlify.app/",
+        githubUrl: "https://github.com/ctrlcoded/GoNomad",
+        details: [
+            "Dual-interface marketplace — customers book vehicles by city while owners manage fleet, bookings and revenue.",
+            "AI-generated car descriptions via Google Gemini, ImageKit cloud media, and JWT + Bcrypt auth with role-based access.",
+            "Real-time availability and a full booking lifecycle: pending → confirmed → completed.",
+        ],
+    },
+    {
+        title: "Lumina AI",
+        category: "AI · Next.js",
+        desc: "A free, zero-backend AI text humanizer that runs entirely in the browser with your own LLM key.",
+        icon: <Sparkles size={40} strokeWidth={1.5} className="text-white" />,
+        gradient: "from-violet-500/25 via-indigo-500/10 to-transparent",
+        glow: "bg-violet-500/20",
+        tech: ["Next.js 16", "TypeScript", "Zustand", "Tailwind 4", "Framer Motion"],
+        githubUrl: "https://github.com/ctrlcoded/lumina-ai",
+        details: [
+            "100% client-side — API keys never leave the browser, giving real privacy with zero server cost.",
+            "Multi-provider LLM support (Gemini, GPT-4o, Claude, DeepSeek) with unlimited word count.",
+            "Premium glassmorphism interface with light/dark theming and single-click humanization.",
+        ],
+    },
+    {
+        title: "MLforAI",
+        category: "Education · Open Source",
+        desc: "A 23-module, interview-focused curriculum bridging classical ML and generative AI.",
+        icon: <GraduationCap size={40} strokeWidth={1.5} className="text-white" />,
+        gradient: "from-amber-500/25 via-orange-500/10 to-transparent",
+        glow: "bg-amber-500/20",
+        tech: ["Next.js 16", "MDX", "Tailwind 4", "Turbopack"],
+        githubUrl: "https://github.com/ctrlcoded/MLforAI",
+        details: [
+            "Three progressive pillars — core foundations, classical ML, and generative AI (transformers, RAG, agents, MLOps).",
+            "Content-as-code with MDX and embedded React components, statically generated for performance.",
+            "Built around mental models, system-design tradeoffs, and production reality over rote theory.",
+        ],
+    },
+    {
+        title: "Solvi",
+        category: "AI · Full-Stack",
+        desc: "An AI-powered spaced-repetition companion for mastering the NeetCode 150.",
+        icon: <Target size={40} strokeWidth={1.5} className="text-white" />,
+        gradient: "from-sky-500/25 via-cyan-500/10 to-transparent",
+        glow: "bg-sky-500/20",
+        tech: ["Next.js 16", "React 19", "Prisma", "SQLite", "TanStack Query", "Gemini"],
+        githubUrl: "https://github.com/ctrlcoded/Solvi",
+        details: [
+            "Smart review scheduling using a custom interval + ease-factor spaced-repetition algorithm.",
+            "AI-generated day-by-day study roadmaps via Gemini and a knowledge vault of complexities and syntax.",
+            "Optimistic UI with TanStack Query, backed by SQLite and Prisma.",
+        ],
+    },
+];
 
 export default function Projects() {
-    const projects = [
-        {
-            title: "GoNomad – Vehicle Rental Platform",
-            category: "Full Stack MERN",
-            desc: "A scalable vehicle rental platform streamlining booking flows.",
-            img: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3",
-            liveUrl: "https://go-nomad.netlify.app/",
-            githubUrl: "#",
-            details: [
-                "Problem: Booking vehicles involved complex, multi-step processes.",
-                "Solution: Built an intuitive platform prioritizing user flow and admin controls.",
-                "Tech Stack: MongoDB, Express.js, React, Node.js",
-                "Impact: Reduced booking steps by ~30% with complete admin dashboard."
-            ]
-        },
-        {
-            title: "Automated DNS Management System",
-            category: "DevOps & Systems",
-            desc: "Containerized automated deployment of DNS protocol systems.",
-            img: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=2034&ixlib=rb-4.0.3",
-            liveUrl: null,
-            githubUrl: "#",
-            details: [
-                "Problem: Manual DNS configuration was prone to human error and time-consuming.",
-                "Solution: Automated DNS infrastructure deployment using shell scripting & Docker.",
-                "Tech Stack: Shell Scripting, BIND9, Docker, DNS Protocol",
-                "Impact: Reduced manual setup time by ~60% with 95%+ validation accuracy."
-            ]
-        }
-    ];
-
     return (
-        <section id="work-section" className="min-h-screen bg-[#0a0a0a] py-32 px-4 md:px-24 border-t border-white/5 relative z-20">
-            <div className="max-w-7xl mx-auto">
-                <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
-                    <div>
-                        <h2 className="text-5xl md:text-7xl font-bold tracking-tighter text-white">
-                            Selected Work
-                        </h2>
-                        <p className="mt-4 text-xl text-zinc-400 font-light">
-                            A collection of things I've built.
-                        </p>
-                    </div>
-                    <button className="flex items-center gap-2 group text-white hover:text-blue-400 transition-colors">
-                        <span className="text-lg font-medium">View Archive</span>
-                        <span className="p-3 rounded-full bg-white/5 group-hover:bg-blue-500/10 transition-colors">
-                            <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-                        </span>
-                    </button>
-                </div>
+        <section
+            id="work-section"
+            className="bg-black py-28 md:py-40 px-5 md:px-10 border-t border-white/5 relative z-20"
+        >
+            <div className="max-w-6xl mx-auto">
+                <Reveal className="mb-16 md:mb-24 text-center">
+                    <p className="text-[13px] font-semibold tracking-[0.2em] uppercase text-[#2997ff] mb-4">
+                        Selected Work
+                    </p>
+                    <h2 className="tracking-apple text-5xl md:text-7xl font-semibold text-gradient leading-[1.02]">
+                        Things I&apos;ve built.
+                    </h2>
+                    <p className="mt-5 text-lg md:text-xl text-white/50 font-normal max-w-2xl mx-auto tracking-tight">
+                        Four products spanning AI tooling, education, and full-stack platforms.
+                    </p>
+                </Reveal>
 
-                <div className="flex flex-col gap-12">
+                <div className="flex flex-col gap-8 md:gap-10">
                     {projects.map((p, i) => (
-                        <div
-                            key={i}
-                            className="group relative overflow-hidden rounded-[2.5rem] bg-white/5 border border-white/10 p-1 md:p-2 transition-all duration-700 hover:border-white/20 select-none"
-                        >
-                            <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none rounded-[2.5rem]" />
-                            <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 bg-[#0a0a0a] rounded-[2rem] p-8 md:p-12 h-full z-10 relative">
+                        <Reveal key={p.title} delay={i * 60}>
+                            <article className="group relative overflow-hidden rounded-[2rem] md:rounded-[2.5rem] glass hover:border-white/15 transition-all duration-500">
+                                <div className="grid lg:grid-cols-2 gap-0">
+                                    {/* Visual panel */}
+                                    <div
+                                        className={`relative min-h-[240px] lg:min-h-full overflow-hidden bg-gradient-to-br ${p.gradient} ${
+                                            i % 2 === 1 ? "lg:order-2" : ""
+                                        }`}
+                                    >
+                                        <div className={`absolute -top-16 -left-16 h-64 w-64 rounded-full blur-3xl ${p.glow}`} />
+                                        <div className="absolute inset-0 flex flex-col items-center justify-center gap-5 p-10">
+                                            <div className="h-20 w-20 rounded-3xl glass flex items-center justify-center transition-transform duration-700 group-hover:scale-110">
+                                                {p.icon}
+                                            </div>
+                                            <span className="text-3xl md:text-4xl font-semibold tracking-apple text-white/95">
+                                                {p.title}
+                                            </span>
+                                        </div>
+                                    </div>
 
-                                {/* Image Section */}
-                                <div className="lg:w-1/2 relative rounded-3xl overflow-hidden aspect-video border border-white/5">
-                                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/80 to-transparent z-10" />
-                                    <img
-                                        src={p.img}
-                                        alt={p.title}
-                                        className="w-full h-full object-cover opacity-60 transition-all duration-1000 group-hover:scale-110 group-hover:opacity-80 saturate-50 group-hover:saturate-100"
-                                    />
-                                </div>
-
-                                {/* Content Section */}
-                                <div className="lg:w-1/2 flex flex-col justify-center">
-                                    <div className="flex items-center gap-4 mb-6">
-                                        <span className="px-4 py-1.5 text-xs font-semibold tracking-widest text-[#0a0a0a] bg-zinc-200 rounded-full">
+                                    {/* Content */}
+                                    <div className="p-8 md:p-12 flex flex-col justify-center">
+                                        <span className="text-[12px] font-semibold tracking-[0.16em] uppercase text-white/40 mb-4">
                                             {p.category}
                                         </span>
-                                    </div>
-                                    <h3 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight leading-tight">{p.title}</h3>
+                                        <h3 className="text-2xl md:text-3xl font-semibold text-white tracking-tight mb-4 leading-snug">
+                                            {p.desc}
+                                        </h3>
 
-                                    <ul className="space-y-4 mb-8 text-zinc-400 font-light text-base md:text-lg">
-                                        {p.details.map((detail, idx) => {
-                                            const [boldPart, ...rest] = detail.split(": ");
-                                            return (
+                                        <ul className="space-y-3 mb-7 text-[15px] md:text-base text-white/55 font-normal leading-relaxed">
+                                            {p.details.map((d, idx) => (
                                                 <li key={idx} className="flex gap-3 items-start">
-                                                    <div className="w-1.5 h-1.5 rounded-full bg-zinc-600 mt-2.5 shrink-0" />
-                                                    <span>
-                                                        <strong className="text-zinc-200 font-medium">{boldPart}:</strong> {rest.join(": ")}
-                                                    </span>
+                                                    <span className="mt-2 h-1.5 w-1.5 rounded-full bg-white/30 shrink-0" />
+                                                    <span>{d}</span>
                                                 </li>
-                                            );
-                                        })}
-                                    </ul>
+                                            ))}
+                                        </ul>
 
-                                    <div className="flex flex-wrap gap-4 mt-auto pt-4">
-                                        {p.liveUrl && (
-                                            <a href={p.liveUrl} target="_blank" rel="noreferrer" className="flex items-center gap-2 px-6 py-3 rounded-full bg-white text-black font-semibold hover:bg-zinc-200 transition-colors">
-                                                Live Demo <ExternalLink size={18} />
+                                        <div className="flex flex-wrap gap-2 mb-8">
+                                            {p.tech.map((t) => (
+                                                <span
+                                                    key={t}
+                                                    className="text-[12px] font-medium text-white/70 bg-white/5 border border-white/10 rounded-full px-3 py-1"
+                                                >
+                                                    {t}
+                                                </span>
+                                            ))}
+                                        </div>
+
+                                        <div className="flex flex-wrap gap-3 mt-auto">
+                                            {p.liveUrl && (
+                                                <a
+                                                    href={p.liveUrl}
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                    className="flex items-center gap-2 px-5 h-11 rounded-full bg-[#2997ff] hover:bg-[#0a84ff] text-white text-sm font-medium transition-colors"
+                                                >
+                                                    Live Demo <ExternalLink size={16} />
+                                                </a>
+                                            )}
+                                            <a
+                                                href={p.githubUrl}
+                                                target="_blank"
+                                                rel="noreferrer"
+                                                className="flex items-center gap-2 px-5 h-11 rounded-full bg-white/8 hover:bg-white/15 text-white text-sm font-medium border border-white/10 transition-colors"
+                                            >
+                                                GitHub <Github size={16} />
                                             </a>
-                                        )}
-                                        {p.githubUrl && (
-                                            <a href={p.githubUrl} target="_blank" rel="noreferrer" className="flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 text-white font-medium hover:bg-white/20 transition-colors border border-white/10">
-                                                GitHub <Github size={18} />
-                                            </a>
-                                        )}
+                                        </div>
                                     </div>
                                 </div>
-
-                            </div>
-                        </div>
+                            </article>
+                        </Reveal>
                     ))}
                 </div>
             </div>

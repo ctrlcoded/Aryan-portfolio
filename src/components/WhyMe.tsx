@@ -1,29 +1,47 @@
-export default function WhyMe() {
-    const points = [
-        { title: "500+", desc: "DSA problems solved" },
-        { title: "1800+", desc: "LeetCode rating" },
-        { title: "Security", desc: "Built production auth systems" },
-        { title: "Systems", desc: "Strong backend & system design" },
-        { title: "Leadership", desc: "Led 2000+ participant hackathon" }
-    ];
+import Reveal from "./Reveal";
 
+const stats = [
+    { title: "500+", desc: "DSA problems solved" },
+    { title: "1800+", desc: "Peak LeetCode rating" },
+    { title: "2000+", desc: "Hackathon participants led" },
+    { title: "4", desc: "AI & full-stack products shipped" },
+];
+
+export default function WhyMe() {
     return (
-        <section className="bg-[#0a0a0a] py-32 px-4 md:px-24 border-t border-white/5 relative z-20">
-            <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16">
-                <div className="lg:w-1/3">
-                    <h2 className="text-5xl md:text-7xl font-bold tracking-tighter text-white leading-[1.1]">
-                        Why Work With Me
-                    </h2>
-                    <p className="mt-6 text-xl font-light text-zinc-400">
-                        I combine strong computer science fundamentals with practical engineering experience to deliver robust, scalable solutions.
+        <section
+            id="about-section"
+            className="relative z-20 bg-black py-28 md:py-40 px-5 md:px-10 border-t border-white/5"
+        >
+            <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-14 lg:gap-20">
+                <Reveal className="lg:w-2/5">
+                    <p className="text-[13px] font-semibold tracking-[0.2em] uppercase text-[#2997ff] mb-4">
+                        About
                     </p>
-                </div>
-                <div className="lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {points.map((p, i) => (
-                        <div key={i} className="p-8 rounded-3xl bg-white/[0.03] border border-white/10 hover:bg-white/[0.06] transition-colors flex flex-col justify-center">
-                            <h3 className="text-4xl lg:text-5xl font-black text-white mb-3">{p.title}</h3>
-                            <p className="text-lg text-zinc-400 font-light leading-snug">{p.desc}</p>
-                        </div>
+                    <h2 className="tracking-apple text-4xl md:text-6xl font-semibold text-gradient leading-[1.03]">
+                        Fundamentals first. <br />
+                        Products that ship.
+                    </h2>
+                    <p className="mt-6 text-lg text-white/55 font-normal leading-relaxed tracking-tight">
+                        I pair strong computer-science fundamentals with hands-on engineering —
+                        evaluating frontier AI models by day and building AI-native products the
+                        rest of the time. I care about correctness, systems that scale, and
+                        interfaces that feel effortless.
+                    </p>
+                </Reveal>
+
+                <div className="lg:w-3/5 grid grid-cols-2 gap-4 md:gap-6">
+                    {stats.map((p, i) => (
+                        <Reveal key={p.desc} delay={i * 70}>
+                            <div className="h-full p-7 md:p-9 rounded-3xl glass hover:border-white/15 transition-colors duration-500 flex flex-col justify-center">
+                                <h3 className="text-4xl md:text-6xl font-semibold text-white tracking-apple mb-2">
+                                    {p.title}
+                                </h3>
+                                <p className="text-[15px] md:text-lg text-white/50 font-normal leading-snug">
+                                    {p.desc}
+                                </p>
+                            </div>
+                        </Reveal>
                     ))}
                 </div>
             </div>

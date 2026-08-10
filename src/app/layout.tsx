@@ -5,8 +5,9 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Aryan Raghav | Full Stack Developer",
-  description: "Professional portfolio of Aryan Raghav, showcasing high-performance web applications built with the MERN stack.",
+  title: "Aryan Raghav — Software Engineer & AI",
+  description:
+    "Aryan Raghav — software engineer building AI products and scalable web applications. Selected work, experience, and research.",
 };
 
 export default function RootLayout({

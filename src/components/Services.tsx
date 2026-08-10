@@ -1,33 +1,70 @@
-import { MonitorSmartphone, ShieldCheck, LayoutDashboard, Webhook, Container, Rocket } from "lucide-react";
+import { Brain, MonitorSmartphone, ShieldCheck, Database, Webhook, Rocket } from "lucide-react";
+import Reveal from "./Reveal";
+
+const services = [
+    {
+        icon: <Brain size={24} strokeWidth={1.5} className="text-white" />,
+        title: "AI & LLM Engineering",
+        desc: "Multi-model pipelines, embeddings, retrieval, and rigorous evaluation of agentic systems.",
+    },
+    {
+        icon: <MonitorSmartphone size={24} strokeWidth={1.5} className="text-white" />,
+        title: "Full-Stack Products",
+        desc: "Production web apps with React, Next.js, and Node — from first commit to deploy.",
+    },
+    {
+        icon: <ShieldCheck size={24} strokeWidth={1.5} className="text-white" />,
+        title: "Secure Auth",
+        desc: "JWT and role-based access control built for real-world security and reliability.",
+    },
+    {
+        icon: <Database size={24} strokeWidth={1.5} className="text-white" />,
+        title: "Data & ML",
+        desc: "Scikit-learn ensembles, feature extraction, and retrieval that improves accuracy.",
+    },
+    {
+        icon: <Webhook size={24} strokeWidth={1.5} className="text-white" />,
+        title: "REST APIs",
+        desc: "Scalable, well-documented backend services with clean, performant architecture.",
+    },
+    {
+        icon: <Rocket size={24} strokeWidth={1.5} className="text-white" />,
+        title: "MVP Development",
+        desc: "Fast, focused execution to take early-stage ideas from concept to launch.",
+    },
+];
 
 export default function Services() {
-    const services = [
-        { icon: <MonitorSmartphone size={28} className="text-white" />, title: "Full Stack MERN Apps", desc: "Production-ready web applications built from scratch with seamless user experiences." },
-        { icon: <ShieldCheck size={28} className="text-white" />, title: "Secure Authentication", desc: "Robust JWT & Role-Based Access Control integration for total security." },
-        { icon: <LayoutDashboard size={28} className="text-white" />, title: "Admin Dashboards", desc: "Custom back-office tools, CMS, and actionable analytics interfaces." },
-        { icon: <Webhook size={28} className="text-white" />, title: "REST APIs", desc: "Highly scalable, well-documented, and performant backend node.js APIs." },
-        { icon: <Container size={28} className="text-white" />, title: "Docker Deployment", desc: "Containerized application architectures ensuring consistency and easy scaling." },
-        { icon: <Rocket size={28} className="text-white" />, title: "Startup MVP Development", desc: "Fast execution for early-stage startups to launch their custom products rapidly." }
-    ];
-
     return (
-        <section id="services-section" className="bg-[#0a0a0a] py-32 px-4 md:px-24 border-t border-white/5 relative z-20">
-            <div className="max-w-7xl mx-auto">
-                <div className="mb-20 max-w-2xl">
-                    <h2 className="text-5xl md:text-7xl font-bold tracking-tighter text-white leading-[1.1]">
-                        What I Can Help You Build
+        <section
+            id="services-section"
+            className="relative z-20 bg-black py-28 md:py-40 px-5 md:px-10 border-t border-white/5"
+        >
+            <div className="max-w-6xl mx-auto">
+                <Reveal className="mb-16 md:mb-20 max-w-2xl">
+                    <p className="text-[13px] font-semibold tracking-[0.2em] uppercase text-[#2997ff] mb-4">
+                        Capabilities
+                    </p>
+                    <h2 className="tracking-apple text-4xl md:text-6xl font-semibold text-gradient leading-[1.03]">
+                        What I can help you build.
                     </h2>
-                </div>
+                </Reveal>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                     {services.map((s, i) => (
-                        <div key={i} className="group flex flex-col p-10 rounded-3xl bg-white/[0.03] border border-white/10 hover:bg-white/[0.06] transition-all duration-300">
-                            <div className="h-14 w-14 rounded-2xl bg-white/10 flex items-center justify-center mb-8 shrink-0">
-                                {s.icon}
+                        <Reveal key={s.title} delay={i * 60}>
+                            <div className="group h-full flex flex-col p-8 md:p-9 rounded-3xl glass hover:border-white/15 transition-all duration-500">
+                                <div className="h-12 w-12 rounded-2xl bg-white/8 border border-white/10 flex items-center justify-center mb-7 shrink-0 transition-transform duration-500 group-hover:scale-105">
+                                    {s.icon}
+                                </div>
+                                <h3 className="text-xl font-semibold text-white tracking-tight mb-3">
+                                    {s.title}
+                                </h3>
+                                <p className="text-[15px] text-white/55 font-normal leading-relaxed grow">
+                                    {s.desc}
+                                </p>
                             </div>
-                            <h3 className="text-2xl font-bold text-white mb-4">{s.title}</h3>
-                            <p className="text-zinc-400 font-light leading-relaxed grow">{s.desc}</p>
-                        </div>
+                        </Reveal>
                     ))}
                 </div>
             </div>
