@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./public/preview.png" alt="Portfolio Preview" width="100%" />
+  <img src="./public/frames/preview.png" alt="Portfolio Preview" width="100%" />
 
   <h1>Aryan Raghav - Professional Portfolio</h1>
   
