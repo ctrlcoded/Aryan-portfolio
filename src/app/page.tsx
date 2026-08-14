@@ -1,4 +1,4 @@
-import ScrollyCanvas from "@/components/ScrollyCanvas";
+import ScrollyVideo from "@/components/ScrollyVideo";
 import Overlay from "@/components/Overlay";
 import Projects from "@/components/Projects";
 import Research from "@/components/Research";
@@ -13,12 +13,12 @@ import BackToTop from "@/components/BackToTop";
 
 export default function Home() {
   return (
-    <main className="bg-black min-h-screen w-full relative selection:bg-[#2997ff]/30">
+    <main className="bg-black min-h-screen w-full relative selection:bg-white/25">
       <Navbar />
 
       <div className="relative">
-        {/* 500vh scroll-scrub photo sequence (kept as-is) */}
-        <ScrollyCanvas />
+        {/* 500vh scroll-scrubbed hero video */}
+        <ScrollyVideo />
         {/* Sticky overlay synced with the scroll */}
         <Overlay />
       </div>

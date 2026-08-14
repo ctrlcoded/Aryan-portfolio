@@ -114,12 +114,12 @@ function Solvi() {
         <div className="absolute inset-0 p-3 flex flex-col gap-2">
             {/* header with progress */}
             <div className="flex items-center gap-3">
-                <div className="h-9 w-9 rounded-full border-[3px] border-sky-400/80 border-r-white/10" />
+                <div className="h-9 w-9 rounded-full border-[3px] border-white/70 border-r-white/10" />
                 <div className="flex flex-col gap-1.5">
                     {bar("70px", "bg-white/30")}
                     {bar("44px", "bg-white/15")}
                 </div>
-                <div className="ml-auto h-5 w-14 rounded-full bg-sky-400/70" />
+                <div className="ml-auto h-5 w-14 rounded-full bg-white/70" />
             </div>
             {/* problem rows */}
             <div className="flex-1 flex flex-col gap-1.5">

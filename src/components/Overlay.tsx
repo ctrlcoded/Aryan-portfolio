@@ -42,8 +42,8 @@ export default function Overlay() {
                         className="mb-8 flex items-center gap-2.5 rounded-full glass px-4 py-2 text-[13px] font-medium text-white/80"
                     >
                         <span className="relative flex h-2 w-2">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#2997ff] opacity-70"></span>
-                            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#2997ff]"></span>
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-70"></span>
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
                         </span>
                         Available for new work
                     </motion.div>
@@ -81,7 +81,7 @@ export default function Overlay() {
                                     .getElementById("work-section")
                                     ?.scrollIntoView({ behavior: "smooth" })
                             }
-                            className="rounded-full bg-[#2997ff] hover:bg-[#0a84ff] text-white text-[15px] font-medium px-7 h-12 flex items-center transition-colors"
+                            className="rounded-full bg-white hover:bg-white/90 text-black text-[15px] font-medium px-7 h-12 flex items-center transition-colors"
                         >
                             View Work
                         </button>
@@ -113,7 +113,7 @@ export default function Overlay() {
                 >
                     <h2 className="tracking-apple text-5xl md:text-8xl font-semibold text-white max-w-4xl leading-[1.02]">
                         Where{" "}
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2997ff] via-[#7ba7ff] to-[#c9a5ff]">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white/70 to-white/40">
                             intelligence
                         </span>{" "}
                         meets engineering.

@@ -29,11 +29,11 @@ export default function Research() {
             className="relative z-20 bg-black py-28 md:py-40 px-5 md:px-10 border-t border-white/5 overflow-hidden"
         >
             {/* ambient glow */}
-            <div className="pointer-events-none absolute top-1/3 left-1/2 -translate-x-1/2 h-[420px] w-[720px] rounded-full bg-[#2997ff]/10 blur-[140px]" />
+            <div className="pointer-events-none absolute top-1/3 left-1/2 -translate-x-1/2 h-[420px] w-[720px] rounded-full bg-white/10 blur-[140px]" />
 
             <div className="max-w-6xl mx-auto relative">
                 <Reveal className="mb-16 md:mb-24 max-w-3xl">
-                    <p className="text-[13px] font-semibold tracking-[0.2em] uppercase text-[#2997ff] mb-4">
+                    <p className="text-[13px] font-semibold tracking-[0.2em] uppercase text-white/50 mb-4">
                         Research
                     </p>
                     <div className="flex items-center gap-4 mb-5">

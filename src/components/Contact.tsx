@@ -14,7 +14,7 @@ const socials = [
 type Status = "idle" | "submitting" | "success" | "error";
 
 const inputBase =
-    "bg-white/5 border border-white/10 rounded-2xl px-5 py-4 text-white placeholder-white/40 focus:outline-none focus:border-[#2997ff]/60 focus:bg-white/[0.07] transition-all font-normal";
+    "bg-white/5 border border-white/10 rounded-2xl px-5 py-4 text-white placeholder-white/40 focus:outline-none focus:border-white/60 focus:bg-white/[0.07] transition-all font-normal";
 
 export default function Contact() {
     const [status, setStatus] = useState<Status>("idle");
@@ -61,7 +61,7 @@ export default function Contact() {
         >
             <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-14 lg:gap-20">
                 <Reveal className="lg:w-1/2">
-                    <p className="text-[13px] font-semibold tracking-[0.2em] uppercase text-[#2997ff] mb-4">
+                    <p className="text-[13px] font-semibold tracking-[0.2em] uppercase text-white/50 mb-4">
                         Contact
                     </p>
                     <h2 className="tracking-apple text-5xl md:text-7xl font-semibold text-gradient leading-[1.02]">
@@ -121,7 +121,7 @@ export default function Contact() {
                         <button
                             type="submit"
                             disabled={status === "submitting" || status === "success"}
-                            className="bg-[#2997ff] hover:bg-[#0a84ff] disabled:opacity-70 text-white font-medium text-base py-4 rounded-2xl mt-2 transition-all hover:scale-[1.01] active:scale-[0.99] flex justify-center items-center gap-2"
+                            className="bg-white hover:bg-white/90 disabled:opacity-70 text-black font-medium text-base py-4 rounded-2xl mt-2 transition-all hover:scale-[1.01] active:scale-[0.99] flex justify-center items-center gap-2"
                         >
                             {status === "submitting" && <Loader2 size={18} className="animate-spin" />}
                             {status === "success" && <CheckCircle2 size={18} />}

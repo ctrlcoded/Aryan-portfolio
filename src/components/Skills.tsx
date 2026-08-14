@@ -37,7 +37,7 @@ export default function Skills() {
     return (
         <section className="relative z-20 bg-white/[0.015] py-20 md:py-28 border-t border-white/5 overflow-hidden">
             <Reveal className="text-center mb-12 px-5">
-                <p className="text-[13px] font-semibold tracking-[0.2em] uppercase text-[#2997ff] mb-4">
+                <p className="text-[13px] font-semibold tracking-[0.2em] uppercase text-white/50 mb-4">
                     Toolkit
                 </p>
                 <h2 className="tracking-apple text-3xl md:text-5xl font-semibold text-gradient leading-[1.05]">

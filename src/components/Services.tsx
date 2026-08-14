@@ -42,7 +42,7 @@ export default function Services() {
         >
             <div className="max-w-6xl mx-auto">
                 <Reveal className="mb-16 md:mb-20 max-w-2xl">
-                    <p className="text-[13px] font-semibold tracking-[0.2em] uppercase text-[#2997ff] mb-4">
+                    <p className="text-[13px] font-semibold tracking-[0.2em] uppercase text-white/50 mb-4">
                         Capabilities
                     </p>
                     <h2 className="tracking-apple text-4xl md:text-6xl font-semibold text-gradient leading-[1.03]">

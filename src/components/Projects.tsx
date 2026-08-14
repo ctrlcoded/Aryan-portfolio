@@ -77,7 +77,7 @@ const projects: Project[] = [
         icon: <Target size={18} strokeWidth={1.75} className="text-white" />,
         variant: "solvi",
         previewUrl: "solvi-jade.vercel.app",
-        tint: "from-sky-500/12 to-transparent",
+        tint: "from-white/15 to-transparent",
         tech: ["Next.js 16", "React 19", "Prisma", "SQLite", "TanStack Query", "Gemini"],
         liveUrl: "https://solvi-jade.vercel.app/",
         githubUrl: "https://github.com/ctrlcoded/Solvi",
@@ -97,7 +97,7 @@ export default function Projects() {
         >
             <div className="max-w-6xl mx-auto">
                 <Reveal className="mb-16 md:mb-24 text-center">
-                    <p className="text-[13px] font-semibold tracking-[0.2em] uppercase text-[#2997ff] mb-4">
+                    <p className="text-[13px] font-semibold tracking-[0.2em] uppercase text-white/50 mb-4">
                         Selected Work
                     </p>
                     <h2 className="tracking-apple text-5xl md:text-7xl font-semibold text-gradient leading-[1.02]">
@@ -164,7 +164,7 @@ export default function Projects() {
                                                     href={p.liveUrl}
                                                     target="_blank"
                                                     rel="noreferrer"
-                                                    className="group/btn flex items-center gap-2 px-5 h-11 rounded-full bg-[#2997ff] hover:bg-[#0a84ff] text-white text-sm font-medium transition-colors"
+                                                    className="group/btn flex items-center gap-2 px-5 h-11 rounded-full bg-white hover:bg-white/90 text-black text-sm font-medium transition-colors"
                                                 >
                                                     Live Demo{" "}
                                                     <ExternalLink

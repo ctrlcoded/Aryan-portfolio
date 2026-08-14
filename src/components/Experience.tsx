@@ -31,7 +31,7 @@ export default function Experience() {
         >
             <div className="max-w-6xl mx-auto">
                 <Reveal className="mb-14 md:mb-20 text-center">
-                    <p className="text-[13px] font-semibold tracking-[0.2em] uppercase text-[#2997ff] mb-4">
+                    <p className="text-[13px] font-semibold tracking-[0.2em] uppercase text-white/50 mb-4">
                         Experience
                     </p>
                     <h2 className="tracking-apple text-5xl md:text-7xl font-semibold text-gradient leading-[1.02]">
@@ -66,7 +66,7 @@ export default function Experience() {
                                 <ul className="space-y-5">
                                     {daBullets.map((b, i) => (
                                         <li key={i} className="flex gap-4 items-start">
-                                            <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[#2997ff] shrink-0" />
+                                            <span className="mt-2 h-1.5 w-1.5 rounded-full bg-white shrink-0" />
                                             <span className="text-[15px] md:text-base text-white/65 font-normal leading-relaxed">
                                                 {b}
                                             </span>
@@ -105,7 +105,7 @@ export default function Experience() {
                             <ul className="space-y-3.5">
                                 {sdeBullets.map((b, i) => (
                                     <li key={i} className="flex gap-3 items-start">
-                                        <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[#2997ff] shrink-0" />
+                                        <span className="mt-2 h-1.5 w-1.5 rounded-full bg-white shrink-0" />
                                         <span className="text-[15px] text-white/65 font-normal leading-relaxed">{b}</span>
                                     </li>
                                 ))}

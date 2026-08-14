@@ -69,7 +69,7 @@ export default function Navbar() {
             {/* scroll progress bar */}
             <motion.div
                 style={{ scaleX: progress }}
-                className="fixed top-0 left-0 right-0 z-[60] h-0.5 origin-left bg-[#2997ff]"
+                className="fixed top-0 left-0 right-0 z-[60] h-0.5 origin-left bg-white"
             />
 
             <motion.nav
@@ -105,7 +105,7 @@ export default function Navbar() {
                                 {active === l.id && (
                                     <motion.span
                                         layoutId="nav-active"
-                                        className="absolute -bottom-1.5 left-0 right-0 mx-auto h-1 w-1 rounded-full bg-[#2997ff]"
+                                        className="absolute -bottom-1.5 left-0 right-0 mx-auto h-1 w-1 rounded-full bg-white"
                                     />
                                 )}
                             </button>
@@ -115,7 +115,7 @@ export default function Navbar() {
                     <div className="flex items-center gap-2">
                         <button
                             onClick={() => go("contact-section")}
-                            className="hidden sm:flex rounded-full bg-[#2997ff] hover:bg-[#0a84ff] text-white text-[13px] font-medium px-5 h-9 items-center transition-colors duration-200"
+                            className="hidden sm:flex rounded-full bg-white hover:bg-white/90 text-black text-[13px] font-medium px-5 h-9 items-center transition-colors duration-200"
                         >
                             Contact
                         </button>

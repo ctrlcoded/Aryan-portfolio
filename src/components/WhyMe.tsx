@@ -14,10 +14,10 @@ export default function WhyMe() {
             className="relative z-20 bg-black py-28 md:py-40 px-5 md:px-10 border-t border-white/5 overflow-hidden"
         >
             {/* ambient backdrop for tonal variety */}
-            <div className="pointer-events-none absolute -top-20 right-0 h-[420px] w-[560px] rounded-full bg-[#7ba7ff]/8 blur-[150px]" />
+            <div className="pointer-events-none absolute -top-20 right-0 h-[420px] w-[560px] rounded-full bg-white/10 blur-[150px]" />
             <div className="max-w-6xl mx-auto relative flex flex-col lg:flex-row gap-14 lg:gap-20">
                 <Reveal className="lg:w-2/5">
-                    <p className="text-[13px] font-semibold tracking-[0.2em] uppercase text-[#2997ff] mb-4">
+                    <p className="text-[13px] font-semibold tracking-[0.2em] uppercase text-white/50 mb-4">
                         About
                     </p>
                     <h2 className="tracking-apple text-4xl md:text-6xl font-semibold text-gradient leading-[1.03]">
