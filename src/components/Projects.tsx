@@ -1,11 +1,11 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { ExternalLink, Github, Car, Sparkles, GraduationCap, Target } from "lucide-react";
+import { ExternalLink, Github, Car, Wallet, GraduationCap, Target } from "lucide-react";
 import Reveal from "./Reveal";
 import ProjectPreview from "./ProjectPreview";
 
-type Variant = "gonomad" | "lumina" | "mlforai" | "solvi";
+type Variant = "gonomad" | "lekha" | "mlforai" | "solvi";
 
 type Project = {
     title: string;
@@ -23,6 +23,23 @@ type Project = {
 
 const projects: Project[] = [
     {
+        title: "Lekha",
+        category: "Full-Stack · Next.js",
+        desc: "A fast, app-like personal finance tracker for logging income, expenses, and daily cash flow.",
+        icon: <Wallet size={18} strokeWidth={1.75} className="text-white" />,
+        variant: "lekha",
+        previewUrl: "ledger-five-sandy.vercel.app",
+        tint: "from-indigo-500/12 to-transparent",
+        tech: ["Next.js 14", "Supabase", "Drizzle ORM", "PostgreSQL", "Tailwind"],
+        liveUrl: "https://ledger-five-sandy.vercel.app/",
+        githubUrl: "https://github.com/ctrlcoded/Ledger",
+        details: [
+            "Dashboard summaries for balance, income, expenses and cash flow, plus a calendar view for daily spending.",
+            "Postgres triggers maintain materialized daily rollups to avoid expensive aggregations, with Row Level Security throughout.",
+            "Email/password and Google OAuth via Supabase Auth, optimistic UI updates, and light/dark/system theming.",
+        ],
+    },
+    {
         title: "GoNomad",
         category: "Full-Stack · MERN",
         desc: "A production car-rental marketplace connecting owners and travelers across North India.",
@@ -37,23 +54,6 @@ const projects: Project[] = [
             "Dual-interface marketplace — customers book vehicles by city while owners manage fleet, bookings and revenue.",
             "AI-generated car descriptions via Google Gemini, ImageKit cloud media, and JWT + Bcrypt auth with role-based access.",
             "Real-time availability and a full booking lifecycle: pending → confirmed → completed.",
-        ],
-    },
-    {
-        title: "Lumina AI",
-        category: "AI · Next.js",
-        desc: "A free, zero-backend AI text humanizer that runs entirely in the browser with your own LLM key.",
-        icon: <Sparkles size={18} strokeWidth={1.75} className="text-white" />,
-        variant: "lumina",
-        previewUrl: "lumina-ai-orcin.vercel.app",
-        tint: "from-violet-500/12 to-transparent",
-        tech: ["Next.js 16", "TypeScript", "Zustand", "Tailwind 4", "Framer Motion"],
-        liveUrl: "https://lumina-ai-orcin.vercel.app/",
-        githubUrl: "https://github.com/ctrlcoded/lumina-ai",
-        details: [
-            "100% client-side — API keys never leave the browser, giving real privacy with zero server cost.",
-            "Multi-provider LLM support (Gemini, GPT-4o, Claude, DeepSeek) with unlimited word count.",
-            "Premium glassmorphism interface with light/dark theming and single-click humanization.",
         ],
     },
     {

@@ -7,7 +7,7 @@
  * Purely presentational, no client hooks — safe inside a server component.
  */
 
-type Variant = "gonomad" | "lumina" | "mlforai" | "solvi";
+type Variant = "gonomad" | "lekha" | "mlforai" | "solvi";
 
 const bar = (w: string, extra = "") => (
     <span className={`block h-1.5 rounded-full ${extra}`} style={{ width: w }} />
@@ -62,22 +62,36 @@ function GoNomad() {
     );
 }
 
-function Lumina() {
+function Lekha() {
     return (
-        <div className="absolute inset-0 p-3 grid grid-cols-2 gap-2">
-            {[["AI text", "bg-white/15"], ["Humanized", "bg-violet-300/40"]].map(([label, tone], c) => (
-                <div key={c} className="rounded-lg bg-white/[0.05] border border-white/10 p-2 flex flex-col gap-1.5">
-                    <div className="text-[8px] uppercase tracking-wider text-white/40">{label}</div>
-                    {bar("95%", tone as string)}
-                    {bar("100%", tone as string)}
-                    {bar("85%", tone as string)}
-                    {bar("92%", tone as string)}
-                    {bar("60%", tone as string)}
-                </div>
-            ))}
-            {/* center action */}
-            <div className="col-span-2 flex justify-center -mt-1">
-                <div className="h-5 w-24 rounded-full bg-violet-400/80" />
+        <div className="absolute inset-0 p-3 flex flex-col gap-2">
+            {/* stat cards: balance, income, expense */}
+            <div className="grid grid-cols-3 gap-2">
+                {[
+                    ["Balance", "bg-indigo-300/70", "70%"],
+                    ["Income", "bg-emerald-400/70", "55%"],
+                    ["Expense", "bg-rose-400/70", "50%"],
+                ].map(([label, tone, w], i) => (
+                    <div key={i} className="rounded-lg bg-white/[0.05] border border-white/10 p-2 flex flex-col gap-1.5">
+                        <div className="text-[7px] uppercase tracking-wider text-white/40">{label}</div>
+                        {bar(w as string, `${tone} h-2`)}
+                    </div>
+                ))}
+            </div>
+            {/* transaction ledger rows */}
+            <div className="flex-1 rounded-lg bg-white/[0.04] border border-white/10 p-2 flex flex-col gap-1.5">
+                {[
+                    ["bg-emerald-400", "62%", "bg-emerald-300/70"],
+                    ["bg-rose-400", "48%", "bg-rose-300/70"],
+                    ["bg-rose-400", "55%", "bg-rose-300/70"],
+                    ["bg-indigo-400", "40%", "bg-indigo-300/70"],
+                ].map(([dot, w, amt], i) => (
+                    <div key={i} className="flex items-center gap-2">
+                        <span className={`h-2 w-2 rounded-full ${dot}`} />
+                        {bar(w as string, "bg-white/20")}
+                        <span className="ml-auto h-1.5 w-8 rounded-full">{bar("100%", amt as string)}</span>
+                    </div>
+                ))}
             </div>
         </div>
     );
@@ -137,7 +151,7 @@ function Solvi() {
 
 const screens: Record<Variant, () => React.ReactNode> = {
     gonomad: GoNomad,
-    lumina: Lumina,
+    lekha: Lekha,
     mlforai: MLforAI,
     solvi: Solvi,
 };
