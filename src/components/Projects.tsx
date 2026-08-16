@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import { ExternalLink, Github, Car, Sparkles, GraduationCap, Target } from "lucide-react";
 import Reveal from "./Reveal";
 import ProjectPreview from "./ProjectPreview";
@@ -90,6 +93,54 @@ const projects: Project[] = [
 ];
 
 export default function Projects() {
+    const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+    useEffect(() => {
+        const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        if (reduce) return;
+
+        let raf = 0;
+
+        const update = () => {
+            raf = 0;
+            const vh = window.innerHeight;
+            const viewportCenter = vh / 2;
+            // Wide "in-focus" dead-zone: while a card's centre is within this
+            // distance of the viewport centre it stays fully sharp. Blur only
+            // ramps up once the card is clearly heading off to become a neighbour.
+            const sharpZone = vh * 0.52;
+            const rampRange = vh * 0.5;
+
+            for (const el of cardRefs.current) {
+                if (!el) continue;
+                const rect = el.getBoundingClientRect();
+                const cardCenter = rect.top + rect.height / 2;
+                const dist = Math.abs(cardCenter - viewportCenter);
+                // 0 while inside the sharp zone, then 0→1 as it leaves toward the edges.
+                const raw = Math.min(Math.max((dist - sharpZone) / rampRange, 0), 1);
+                // Smoothstep for a soft, natural ramp.
+                const e = raw * raw * (3 - 2 * raw);
+
+                el.style.setProperty("--focus-scale", (1 - 0.16 * e).toFixed(4));
+                el.style.setProperty("--focus-blur", (7 * e).toFixed(2) + "px");
+                el.style.setProperty("--focus-opacity", (1 - 0.5 * e).toFixed(3));
+            }
+        };
+
+        const onScroll = () => {
+            if (!raf) raf = requestAnimationFrame(update);
+        };
+
+        update();
+        window.addEventListener("scroll", onScroll, { passive: true });
+        window.addEventListener("resize", onScroll, { passive: true });
+        return () => {
+            window.removeEventListener("scroll", onScroll);
+            window.removeEventListener("resize", onScroll);
+            if (raf) cancelAnimationFrame(raf);
+        };
+    }, []);
+
     return (
         <section
             id="work-section"
@@ -110,7 +161,13 @@ export default function Projects() {
 
                 <div className="flex flex-col gap-8 md:gap-10">
                     {projects.map((p, i) => (
-                        <Reveal key={p.title} delay={i * 60}>
+                        <Reveal key={p.title} delay={i * 60} className="reveal-pop">
+                          <div
+                            ref={(el) => {
+                                cardRefs.current[i] = el;
+                            }}
+                            className="focus-card"
+                          >
                             <article className="group relative overflow-hidden rounded-[2rem] md:rounded-[2.5rem] glass hover:border-white/15 hover:-translate-y-1 hover:shadow-[0_24px_70px_-20px_rgba(41,151,255,0.28)] transition-all duration-500">
                                 <div className="grid lg:grid-cols-2 gap-0">
                                     {/* Product mockup */}
@@ -189,6 +246,7 @@ export default function Projects() {
                                     </div>
                                 </div>
                             </article>
+                          </div>
                         </Reveal>
                     ))}
                 </div>
